@@ -1,5 +1,9 @@
+
 package com.example.newexplodingkittens;
 
+import com.example.newexplodingkittens.model.Deck;
+import com.example.newexplodingkittens.model.Player;
+import com.example.newexplodingkittens.view.PlayerView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -8,7 +12,8 @@ import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GameView extends Application {
     @Override
@@ -20,15 +25,24 @@ public class GameView extends Application {
         stage.setScene(scene);
         stage.show();
 
-        Button deck = new Button();
         TextInputDialog getNumPlayers = new TextInputDialog("2");
         getNumPlayers.setHeaderText("Enter the number of players: ");
         int numPlayers = Integer.parseInt(getNumPlayers.showAndWait().orElse("-1"));
-        TextInputDialog getPlayers = new TextInputDialog("2");
-        getPlayers.setHeaderText("Enter the number of players: ");
+        Deck deck = new Deck(numPlayers);
+
+        TextInputDialog getPlayers = new TextInputDialog("");
+        getPlayers.setHeaderText("Enter the players: ");
+        getPlayers.setContentText("Separate by commas");
         String[] players = getPlayers.showAndWait().orElse("").split(",");
-
-
+        List<Player> playerList = new ArrayList<>();
+        List<PlayerView> playerViewList = new ArrayList<>();
+        for(int lcv = 0; lcv < players.length; lcv++){
+            playerList.add(new Player(players[lcv].trim(), deck));
+            playerViewList.add(new PlayerView(playerList.get(lcv)));
+        }
+        Button newCard = new Button();
+        Image lastCardImage = ImageIO.read(new File("src/images/defuse/Laser-Pointer.jpg"));
+        lastCardImage = lastCardImage.getScaledInstance(-1, gameView.gameFrame.getHeight()/2, Image.SCALE_DEFAULT);
 
     }
 
