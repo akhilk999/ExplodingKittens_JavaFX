@@ -70,7 +70,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.newexplodingkittens/com.example.newexplodingkittens.HelloApplication
+                                com.example.newexplodingkittens/com.example.newexplodingkittens.GameView
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
