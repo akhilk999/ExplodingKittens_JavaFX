@@ -9,6 +9,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -40,9 +42,10 @@ public class GameView extends Application {
             playerList.add(new Player(players[lcv].trim(), deck));
             playerViewList.add(new PlayerView(playerList.get(lcv)));
         }
+        Image deckImage = new Image(getClass().getResourceAsStream("com/example/newexplodingkittens/images/deck.jpg"));
         Button newCard = new Button();
-        Image lastCardImage = ImageIO.read(new File("src/images/defuse/Laser-Pointer.jpg"));
-        lastCardImage = lastCardImage.getScaledInstance(-1, gameView.gameFrame.getHeight()/2, Image.SCALE_DEFAULT);
+        newCard.setGraphic(new ImageView(deckImage));
+        //lastCardImage = lastCardImage.getScaledInstance(-1, gameView.gameFrame.getHeight()/2, Image.SCALE_DEFAULT);
 
     }
 

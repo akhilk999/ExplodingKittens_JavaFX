@@ -1,4 +1,4 @@
-package com.example.newexplodingkittens.controller;
+package com.example.newexplodingkittens;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
