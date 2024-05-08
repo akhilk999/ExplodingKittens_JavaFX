@@ -4,20 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92b11e6f-7af9-4f3a-91f6-2e9c63019650" name="Changes" comment="IF IT DOESNT WORK REVERT TO THIS!!">
+    <list default="true" id="92b11e6f-7af9-4f3a-91f6-2e9c63019650" name="Changes" comment="need to figure how tf controllers work">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/controller/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/GameApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/GameApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/GameApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/controller/ApplicationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/newexplodingkittens/exploding_kittens.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/newexplodingkittens/exploding_kittens.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/newexplodingkittens/images/deck.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/images/deck.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/newexplodingkittens/images/defuse/Laser-Pointer.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/images/defuse/Laser-Pointer.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/newexplodingkittens/images/pix-vertical-placeholder.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/images/pix-vertical-placeholder.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -142,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715198352922</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="need to figure how tf controllers work">
+      <option name="closed" value="true" />
+      <created>1715203958021</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715203958021</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,7 +174,8 @@
     <MESSAGE value="not working lol!" />
     <MESSAGE value="Revert &quot;added both game init popups&quot;&#10;&#10;This reverts commit 7e2ff9b6" />
     <MESSAGE value="IF IT DOESNT WORK REVERT TO THIS!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="IF IT DOESNT WORK REVERT TO THIS!!" />
+    <MESSAGE value="need to figure how tf controllers work" />
+    <option name="LAST_COMMIT_MESSAGE" value="need to figure how tf controllers work" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NewExplodingKittens$HelloApplication.ic" NAME="HelloApplication Coverage Results" MODIFIED="1714767810326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">

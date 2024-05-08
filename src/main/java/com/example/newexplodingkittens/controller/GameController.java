@@ -1,13 +1,13 @@
-package com.example.newexplodingkittens;
+package com.example.newexplodingkittens.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
-public class GameController {
+public class GameController extends AnchorPane {
     @FXML
     private Font x3;
 

@@ -2,12 +2,14 @@
 package com.example.newexplodingkittens;
 
 import com.example.newexplodingkittens.model.Deck;
-import com.example.newexplodingkittens.GameController;
+import com.example.newexplodingkittens.controller.ApplicationController;
 import com.example.newexplodingkittens.model.Player;
 import com.example.newexplodingkittens.view.PlayerView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
 
@@ -24,7 +26,7 @@ public class GameApplication extends Application {
         stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
-        GameController controller = fxmlLoader.getController();
+        ApplicationController controller = fxmlLoader.getController();
 
 
         TextInputDialog getNumPlayers = new TextInputDialog("2");
@@ -42,6 +44,14 @@ public class GameApplication extends Application {
             playerList.add(new Player(players[lcv].trim(), deck));
             playerViewList.add(new PlayerView(playerList.get(lcv)));
         }
+        Button drawCard = (Button) scene.lookup("#drawCard");
+        Label clickConfirmed = (Label) scene.lookup("#clickConfirmed");
+        Label lastCard = (Label) scene.lookup("#lastCard");
+        drawCard.setOnAction(actionEvent -> {
+            clickConfirmed.setText("Clicked!");
+            lastCard.setText("idk yet");
+
+        });
 
     }
 
