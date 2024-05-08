@@ -6,6 +6,7 @@ import com.example.newexplodingkittens.model.Player;
 import com.example.newexplodingkittens.view.PlayerView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextInputDialog;
@@ -20,8 +21,10 @@ import java.util.List;
 public class GameView extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(GameView.class.getResource("exploding_kittens.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = FXMLLoader.load(GameView.class.getResource("exploding_kittens.fxml"));
+        fxmlLoader.setLocation(GameView.class.getResource("exploding_kittens.fxml"));
+        Scene scene = new Scene(root);
         stage.setTitle("Game");
         stage.setMaximized(true);
         stage.setScene(scene);
@@ -42,9 +45,9 @@ public class GameView extends Application {
             playerList.add(new Player(players[lcv].trim(), deck));
             playerViewList.add(new PlayerView(playerList.get(lcv)));
         }
-        Image deckImage = new Image(getClass().getResourceAsStream("com/example/newexplodingkittens/images/deck.jpg"));
-        Button newCard = new Button();
-        newCard.setGraphic(new ImageView(deckImage));
+        Image deckImage = new Image(getClass().getResourceAsStream("images/deck.jpg"));
+        //Button newCard = new Button();
+        //newCard.setGraphic(new ImageView(deckImage));
         //lastCardImage = lastCardImage.getScaledInstance(-1, gameView.gameFrame.getHeight()/2, Image.SCALE_DEFAULT);
 
     }

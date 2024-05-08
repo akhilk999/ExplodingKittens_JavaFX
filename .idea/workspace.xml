@@ -5,33 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92b11e6f-7af9-4f3a-91f6-2e9c63019650" name="Changes" comment="added both game init popups">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/controller/PlayerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/exception/GameException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/images/deck.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/images/defuse/Laser-Pointer.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/interfaces/Card.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/Deck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/AttackCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/DefuseCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/ExplodingKittenCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/NopeCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/SeeTheFuture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/ShuffleCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/SkipCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/old/OldGameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/old/OldGameView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/testing/CardFactoryTester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/testing/GameUtilsTester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/util/CardFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/util/GameUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/view/PlayerView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/view/exploding_kittens.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/newexplodingkittens/images/pix-vertical-placeholder.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/controller/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/GameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/view/exploding_kittens.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/newexplodingkittens/exploding_kittens.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/newexplodingkittens/exploding_kittens.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,18 +19,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "akhilk999"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;akhilk999&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/akhilk999/ExplodingKittens_JavaFX.git",
-    "accountId": "7fc93938-2f34-44bc-8e8a-fdeeeec13316"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/akhilk999/ExplodingKittens_JavaFX.git&quot;,
+    &quot;accountId&quot;: &quot;7fc93938-2f34-44bc-8e8a-fdeeeec13316&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -60,9 +38,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2fyJye2scwproGxddImOm5CQu05" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -76,7 +54,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/akhilk999/IdeaProjects/NewExplodingKittens/src/main/java/com/example/newexplodingkittens",
+    "last_opened_file_path": "/Users/akhilk999/IdeaProjects/NewExplodingKittens/src/main/resources",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -84,8 +62,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/newexplodingkittens/view/images" />
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/newexplodingkittens/view/images/defuse" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/view" />
       <recent name="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/newexplodingkittens/images" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/example/newexplodingkittens" />
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/newexplodingkittens/view/images" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/newexplodingkittens/view/images/defuse" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.newexplodingkittens" />
@@ -124,8 +112,27 @@
       <option name="project" value="LOCAL" />
       <updated>1715025875354</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added both game init popups">
+      <option name="closed" value="true" />
+      <created>1715186767042</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715186767042</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="using javafx is too good" />
