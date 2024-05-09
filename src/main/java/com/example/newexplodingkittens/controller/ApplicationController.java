@@ -1,9 +1,11 @@
 package com.example.newexplodingkittens.controller;
 
+import com.example.newexplodingkittens.interfaces.Card;
 import com.example.newexplodingkittens.model.Deck;
 import com.example.newexplodingkittens.model.Player;
 import com.example.newexplodingkittens.model.cards.DefuseCard;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
@@ -39,6 +41,8 @@ public class ApplicationController implements Initializable {
     public TurnController turnController;
     public Player currentPlayer;
     public int index;
+    public boolean clickedDrawCard;
+    public boolean clickedPlayedCard;
 
     @FXML
     public void drawCardHandler(ActionEvent event) {
@@ -60,6 +64,7 @@ public class ApplicationController implements Initializable {
             tabPane.getSelectionModel().select(tabPane.getTabs().get(index));
             currentPlayerLabel.setText(currentPlayer.getName());
             drawCard.setDisable(false);
+            setCardButtonsDisable(false);
         }
     }
 
@@ -103,14 +108,20 @@ public class ApplicationController implements Initializable {
             tabContent.setId("#" + newPlayer.getName() + "Tab");
             newTab.setContent(verticalContent);
             verticalContent.getChildren().add(tabContent);
-            List<Node> cardLabels = new ArrayList<>();
+            List<Node> cardButtons = new ArrayList<>();
             for (int lcv2 = 0; lcv2 < newPlayer.getHand().size(); lcv2++) {
-                Button cardButton = new Button(newPlayer.getHand().get(lcv2).toString());
-                cardButton.setFont(new Font(cardButton.getFont().getName(), 15));
-                cardLabels.add(cardButton);
+                Card card = newPlayer.getHand().get(lcv2);
+                Button cardButton = new Button(card.toString());
+                cardButtons.add(cardButton);
+                cardButton.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        card.play(deck);
+                    }
+                });
             }
             tabContent.setSpacing(15);
-            tabContent.getChildren().addAll(cardLabels);
+            tabContent.getChildren().addAll(cardButtons);
         }
         deck.addKittens(numPlayers);
         deck.shuffle();
@@ -119,6 +130,8 @@ public class ApplicationController implements Initializable {
         currentPlayer = turnController.getCurrentPlayer();
         currentPlayerLabel.setText("Current Player: " + currentPlayer.getName());
         index = turnController.getIndex();
+        clickedDrawCard = false;
+        clickedPlayedCard = false;
         endTurn.setDisable(true);
         drawCard.setDisable(false);
     }
@@ -128,7 +141,8 @@ public class ApplicationController implements Initializable {
         List<Node> labelList = horizontal.getChildren();
         List<Node> cardButtons = new ArrayList<>();
         for(int lcv2 = 0; lcv2 < currentPlayer.getHand().size(); lcv2++){
-            cardButtons.add(new Button(currentPlayer.getHand().get(lcv2).toString()));
+            Button cardButton = new Button(currentPlayer.getHand().get(lcv2).toString());
+            cardButtons.add(cardButton);
         }
         labelList.clear();
         labelList.addAll(cardButtons);
