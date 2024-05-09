@@ -59,7 +59,9 @@ public class Deck {
 
     public List<Card> getLastPlayed() { return lastPlayed; }
 
-    public void setLastPlayed(Card card) { lastPlayed.add(card); }
+    public Card getLastPlayedCard(){return lastPlayed.get(0); }
+
+    public void setLastPlayed(Card card) { lastPlayed.add(0,card); }
 
     public void shuffle() { deck = GameUtils.shuffle(deck); }
 

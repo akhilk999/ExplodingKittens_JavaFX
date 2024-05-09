@@ -1,6 +1,7 @@
 
 package com.example.newexplodingkittens;
 
+import com.example.newexplodingkittens.controller.TurnController;
 import com.example.newexplodingkittens.interfaces.Card;
 import com.example.newexplodingkittens.model.Deck;
 import com.example.newexplodingkittens.controller.ApplicationController;
@@ -53,13 +54,17 @@ public class GameApplication extends Application {
                 tabs.add(new Tab(playerList.get(lcv).getName()));
         }
         Button drawCard = (Button) scene.lookup("#drawCard");
-        final Card[] lastCard = new Card[1];
         Label lastCardName = (Label) scene.lookup("#lastCard");
-        drawCard.setOnAction(actionEvent ->{
-            lastCard[0] = playerList.get(0).draw();
-            lastCardName.setText("idk yet");
-        });
+        TurnController turnController = new TurnController(playerList);
 
+        while(!turnController.getIsDone())
+        {
+            drawCard.setOnAction(actionEvent ->{
+                deck.setLastPlayed(turnController.getCurrentPlayer().draw());
+                drawCard.setDisable(true);
+            });
+
+        }
     }
 
     public static void main(String[] args) {
