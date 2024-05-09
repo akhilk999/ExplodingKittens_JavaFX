@@ -3,9 +3,10 @@ package com.example.newexplodingkittens.interfaces;
 
 import javax.swing.*;
 import java.io.IOException;
+import com.example.newexplodingkittens.model.Deck;
 
 public  interface Card {
-    void play();
+    void play(Deck deck);
     boolean isNopeable();
     ImageIcon[] getImages() throws IOException;
 }
