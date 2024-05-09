@@ -6,7 +6,7 @@ import com.example.newexplodingkittens.model.cards.ShuffleCard;
 
 public class ShuffleCardTester {
     public static void main(String[] args) {
-        System.out.println("Testing Player.java");
+        System.out.println("Testing ShuffleCard.java");
         Deck deck = new Deck(2);
         Player player1 = new Player("Player1", deck);
         Player player2 = new Player("Player2", deck);
