@@ -32,7 +32,7 @@ public class GameUtilsTester {
         for(int lcv = 0; lcv < 2; lcv++)
             cards.add(new ExplodingKittenCard());
         for(int lcv = 0; lcv < 3; lcv++)
-            cards.add(new NopeCard());
+            cards.add(new FindKitten());
         return cards;
     }
 }

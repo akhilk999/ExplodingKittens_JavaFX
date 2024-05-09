@@ -47,7 +47,7 @@
          <items>
             <VBox alignment="CENTER" prefHeight="296.0" prefWidth="241.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="362.0" prefWidth="898.0">
+                  <HBox alignment="CENTER" prefHeight="171.0" prefWidth="898.0">
                      <children>
                         <Button fx:id="drawCard" alignment="CENTER" mnemonicParsing="false" onAction="#drawCardHandler" prefHeight="114.0" prefWidth="194.0" text="Draw Card" textOverrun="WORD_ELLIPSIS">
                            <font>
@@ -68,6 +68,11 @@
                         </Button>
                      </children>
                   </HBox>
+                  <Label fx:id="currentPlayerLabel" contentDisplay="CENTER" prefHeight="28.0" prefWidth="405.0" text="Current Player: ">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
         <ScrollPane prefHeight="195.0" prefWidth="898.0">

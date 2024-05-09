@@ -5,7 +5,7 @@ import com.example.newexplodingkittens.model.Deck;
 
 import javax.swing.*;
 
-public class NopeCard implements Card {
+public class FindKitten implements Card {
 
     /**
      * Place a card and carry out it's action, removing the card
@@ -41,6 +41,6 @@ public class NopeCard implements Card {
      */
     @Override
     public String toString(){
-        return "Nope";
+        return "Find Kitten";
     }
 }

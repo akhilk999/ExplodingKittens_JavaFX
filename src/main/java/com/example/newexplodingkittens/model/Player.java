@@ -11,12 +11,14 @@ public class Player {
     private Deck deck;
     private List<Card> hand;
     private boolean eliminated;
+    public int numTurns;
 
     public Player(String name, Deck deck){
         this.name = name;
         this.deck = deck;
         hand = new ArrayList<>();
         eliminated = false;
+        numTurns = 1;
     }
 
     /** If an ExplodingKittenCard is drawn, then this function will return
@@ -81,6 +83,13 @@ public class Player {
     }
     public void addCardtoHand(Card card){
         hand.add(card);
+    }
+
+    public int getNumTurns(){
+        return numTurns;
+    }
+    public void addTurns(int extra){
+        numTurns += extra;
     }
 
 

@@ -2,16 +2,15 @@ package com.example.newexplodingkittens.util;
 
 import com.example.newexplodingkittens.interfaces.Card;
 import com.example.newexplodingkittens.model.cards.*;
-import com.example.newexplodingkittens.interfaces.Card;
 
 import java.util.*;
 
 public class CardFactory {
 
     //lists of card number allocations
-    private static final int[] minPlayers = {4, 3,  3, 6, 5, 4, 6};
-    private static final int[] midPlayers = {6, 7,  4, 7, 7, 6, 8};
-    private static final int[] maxPlayers = {10, 10, 7, 13, 12, 10, 14};
+    private static final int[] minPlayers = {4, 3,  3, 2, 5, 4, 6};
+    private static final int[] midPlayers = {6, 7,  4, 3, 7, 6, 8};
+    private static final int[] maxPlayers = {10, 10, 7, 4, 12, 10, 14};
 
     //instance variables
     int numPlayers;
@@ -52,7 +51,7 @@ public class CardFactory {
         for(int lcv = 0; lcv < cardNums[2]; lcv++)
             list.add(new DrawFromTheBottom());
         for(int lcv = 0; lcv < cardNums[3]; lcv++)
-            list.add(new NopeCard());
+            list.add(new FindKitten());
         for(int lcv = 0; lcv < cardNums[4]; lcv++)
             list.add(new SeeTheFuture());
         for(int lcv = 0; lcv < cardNums[5]; lcv++)
