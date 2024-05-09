@@ -8,9 +8,7 @@ import com.example.newexplodingkittens.view.PlayerView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -40,15 +38,20 @@ public class GameApplication extends Application {
         String[] players = getPlayers.showAndWait().orElse("").split(",");
         List<Player> playerList = new ArrayList<>();
         List<PlayerView> playerViewList = new ArrayList<>();
+        TabPane tabPane = (TabPane) scene.lookup("#tabPane");
+        List<Tab> tabs = tabPane.getTabs();
         for(int lcv = 0; lcv < players.length; lcv++){
             playerList.add(new Player(players[lcv].trim(), deck));
             playerViewList.add(new PlayerView(playerList.get(lcv)));
+            if(lcv < 2)
+                tabs.get(lcv).setText(playerList.get(lcv).getName());
+            else
+                tabs.add(new Tab(playerList.get(lcv).getName()));
         }
         Button drawCard = (Button) scene.lookup("#drawCard");
         Label lastCard = (Label) scene.lookup("#lastCard");
         drawCard.setOnAction(actionEvent -> {
             lastCard.setText("idk yet");
-
         });
 
     }

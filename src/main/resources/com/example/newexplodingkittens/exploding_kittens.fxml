@@ -61,7 +61,7 @@
             </VBox>
         <ScrollPane prefHeight="195.0" prefWidth="898.0">
                <content>
-                  <TabPane prefHeight="303.0" prefWidth="893.0" tabClosingPolicy="UNAVAILABLE">
+                  <TabPane fx:id="tabPane" prefHeight="303.0" prefWidth="893.0" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
                       <Tab text="Player 1">
                         <content>
