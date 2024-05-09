@@ -48,8 +48,10 @@ public class Player {
     /**
      * Draw a card from the deck;
      */
-    public void draw(){
-        hand.add(deck.draw());
+    public Card draw(){
+        Card card = deck.draw();
+        hand.add(card);
+        return card;
     }
 
     /**

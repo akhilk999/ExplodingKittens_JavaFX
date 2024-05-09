@@ -1,11 +1,15 @@
 
 package com.example.newexplodingkittens;
 
+import com.example.newexplodingkittens.interfaces.Card;
 import com.example.newexplodingkittens.model.Deck;
 import com.example.newexplodingkittens.controller.ApplicationController;
 import com.example.newexplodingkittens.model.Player;
+import com.example.newexplodingkittens.model.cards.DefuseCard;
 import com.example.newexplodingkittens.view.PlayerView;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -49,9 +53,11 @@ public class GameApplication extends Application {
                 tabs.add(new Tab(playerList.get(lcv).getName()));
         }
         Button drawCard = (Button) scene.lookup("#drawCard");
-        Label lastCard = (Label) scene.lookup("#lastCard");
-        drawCard.setOnAction(actionEvent -> {
-            lastCard.setText("idk yet");
+        final Card[] lastCard = new Card[1];
+        Label lastCardName = (Label) scene.lookup("#lastCard");
+        drawCard.setOnAction(actionEvent ->{
+            lastCard[0] = playerList.get(0).draw();
+            lastCardName.setText("idk yet");
         });
 
     }
