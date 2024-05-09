@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92b11e6f-7af9-4f3a-91f6-2e9c63019650" name="Changes" comment="god did it works">
+    <list default="true" id="92b11e6f-7af9-4f3a-91f6-2e9c63019650" name="Changes" comment="revert to this if i break everything">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/DrawFromTheBottom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/view/EmptyView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/GameApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/GameApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/controller/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/controller/ApplicationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/view/PlayerView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/util/CardFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/util/CardFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715269832012</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="revert to this if i break everything">
+      <option name="closed" value="true" />
+      <created>1715271584614</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1715271584614</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,7 +214,8 @@
     <MESSAGE value="OMG TABS WORK!!" />
     <MESSAGE value="lets see if this works" />
     <MESSAGE value="god did it works" />
-    <option name="LAST_COMMIT_MESSAGE" value="god did it works" />
+    <MESSAGE value="revert to this if i break everything" />
+    <option name="LAST_COMMIT_MESSAGE" value="revert to this if i break everything" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NewExplodingKittens$HelloApplication.ic" NAME="HelloApplication Coverage Results" MODIFIED="1714767810326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">

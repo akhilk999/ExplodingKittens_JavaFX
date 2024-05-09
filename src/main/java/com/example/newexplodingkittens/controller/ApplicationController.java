@@ -91,6 +91,10 @@ public class ApplicationController implements Initializable {
                 newPlayer.addCardtoHand(deck.draw());
             }
         }
+        deck.addKittens(numPlayers);
+        deck.shuffle();
+
+
         turnController = new TurnController(playerList);
         currentPlayer = turnController.getCurrentPlayer();
         index = turnController.getIndex();

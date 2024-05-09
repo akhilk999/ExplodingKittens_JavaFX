@@ -1,6 +1,7 @@
 package com.example.newexplodingkittens.model;
 
 import com.example.newexplodingkittens.interfaces.Card;
+import com.example.newexplodingkittens.model.cards.ExplodingKittenCard;
 import com.example.newexplodingkittens.util.CardFactory;
 import com.example.newexplodingkittens.util.GameUtils;
 
@@ -64,6 +65,12 @@ public class Deck {
     public void setLastPlayed(Card card) { lastPlayed.add(0,card); }
 
     public void shuffle() { deck = GameUtils.shuffle(deck); }
+
+    public void addKittens(int numPlayers){
+        for(int lcv = 0; lcv < numPlayers - 1; lcv++){
+            deck.add(new ExplodingKittenCard());
+        }
+    }
 
     public String toString(){
         String deckString = "";
