@@ -6,7 +6,11 @@ import com.example.newexplodingkittens.model.cards.DefuseCard;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
@@ -74,22 +78,29 @@ public class ApplicationController implements Initializable {
         }
         List<Player> playerList = new ArrayList<>();
         List<Tab> tabs = tabPane.getTabs();
+        tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
         for(int lcv = 0; lcv < players.length; lcv++){
             Player newPlayer = new Player(players[lcv].trim(),deck);
             playerList.add(newPlayer);
-            if(lcv < 2){
-                tabs.get(lcv).setText(newPlayer.getName());
-                tabs.get(lcv).setId("#" + newPlayer.getName());
-            }
-            else{
                 Tab newTab = new Tab(newPlayer.getName());
                 newTab.setId("#"+ newPlayer.getName());
                 tabs.add(newTab);
-            }
             newPlayer.addCardtoHand(new DefuseCard());
             for(int init = 0; init < 7; init++){
                 newPlayer.addCardtoHand(deck.draw());
             }
+            VBox verticalContent = new VBox();
+            verticalContent.setAlignment(Pos.CENTER);
+            HBox tabContent = new HBox();
+            tabContent.setAlignment(Pos.CENTER);
+            tabContent.setId("#" + newPlayer.getName() + "Tab");
+            newTab.setContent(verticalContent);
+            verticalContent.getChildren().add(tabContent);
+            List<Node> cardLabels = new ArrayList<>();
+            for(int lcv2 = 0; lcv2 < newPlayer.getHand().size(); lcv2++){
+                cardLabels.add(new Label(newPlayer.getHand().get(lcv2).toString()));
+            }
+            tabContent.getChildren().addAll(cardLabels);
         }
         deck.addKittens(numPlayers);
         deck.shuffle();
@@ -98,5 +109,8 @@ public class ApplicationController implements Initializable {
         turnController = new TurnController(playerList);
         currentPlayer = turnController.getCurrentPlayer();
         index = turnController.getIndex();
+    }
+    public void update(){
+
     }
 }

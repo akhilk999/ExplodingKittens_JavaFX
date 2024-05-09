@@ -36,9 +36,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -74,20 +72,7 @@
             </VBox>
         <ScrollPane prefHeight="195.0" prefWidth="898.0">
                <content>
-                  <TabPane fx:id="tabPane" prefHeight="303.0" prefWidth="893.0" tabClosingPolicy="UNAVAILABLE">
-                    <tabs>
-                      <Tab text="Player 1">
-                        <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="232.0" prefWidth="679.0" />
-                        </content>
-                      </Tab>
-                      <Tab text="Player 2">
-                        <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="169.0" prefWidth="742.0" />
-                        </content>
-                      </Tab>
-                    </tabs>
-                  </TabPane>
+                  <TabPane fx:id="tabPane" prefHeight="303.0" prefWidth="893.0" tabClosingPolicy="UNAVAILABLE" />
                </content>
         </ScrollPane>
          </items>
