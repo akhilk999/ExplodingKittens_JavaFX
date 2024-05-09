@@ -32,11 +32,18 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.newexplodingkittens.controller.ApplicationController">
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.newexplodingkittens.controller.ApplicationController">
   <children>
     <SplitPane dividerPositions="0.5" focusTraversable="true" orientation="VERTICAL" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <items>
@@ -44,7 +51,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="362.0" prefWidth="898.0">
                      <children>
-                        <Button fx:id="drawCard" alignment="CENTER" mnemonicParsing="false" prefHeight="141.0" prefWidth="240.0" text="Draw Card" textOverrun="WORD_ELLIPSIS">
+                        <Button fx:id="drawCard" alignment="CENTER" mnemonicParsing="false" onAction="#drawCardHandler" prefHeight="114.0" prefWidth="194.0" text="Draw Card" textOverrun="WORD_ELLIPSIS">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -55,6 +62,12 @@
                               <Font size="30.0" />
                            </font>
                         </Label>
+                        <Label prefHeight="17.0" prefWidth="50.0" />
+                        <Button fx:id="endTurn" mnemonicParsing="false" onAction="#endTurnHandler" prefHeight="117.0" prefWidth="188.0" text="End Turn">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Button>
                      </children>
                   </HBox>
                </children>

@@ -28,6 +28,7 @@ public class TurnController {
     public Player getCurrentPlayer(){
         return currentPlayer;
     }
+    public int getIndex(){return index;}
     public boolean getIsDone(){return isDone;}
     public void endGame(){
         isDone = true;
