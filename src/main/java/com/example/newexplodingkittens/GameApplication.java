@@ -45,10 +45,8 @@ public class GameApplication extends Application {
             playerViewList.add(new PlayerView(playerList.get(lcv)));
         }
         Button drawCard = (Button) scene.lookup("#drawCard");
-        Label clickConfirmed = (Label) scene.lookup("#clickConfirmed");
         Label lastCard = (Label) scene.lookup("#lastCard");
         drawCard.setOnAction(actionEvent -> {
-            clickConfirmed.setText("Clicked!");
             lastCard.setText("idk yet");
 
         });
