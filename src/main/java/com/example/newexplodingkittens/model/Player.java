@@ -10,11 +10,13 @@ public class Player {
     private String name;
     private Deck deck;
     private List<Card> hand;
+    private boolean eliminated;
 
     public Player(String name, Deck deck){
         this.name = name;
         this.deck = deck;
         hand = new ArrayList<>();
+        eliminated = false;
     }
 
     /** If an ExplodingKittenCard is drawn, then this function will return
@@ -22,11 +24,13 @@ public class Player {
      *
      * @return whether they live (true) or die (false)
      */
-    public boolean onExplode(){
+    public void onExplode(){
+        boolean found = false;
         for (Card card : hand)
             if (card instanceof DefuseCard)
-                return true;
-        return false;
+                found = true;
+        if (!found)
+            eliminated = true;
     }
 
     /**
@@ -51,6 +55,14 @@ public class Player {
     public void draw(){
         hand.add(deck.draw());
     }
+
+    public void playCard(int index){
+        (hand.get(index)).play(deck);
+        Card remove = hand.remove(index);
+        deck.setLastPlayed(remove);
+    }
+
+    public Deck getDeck(){return deck;}
 
     /**
      * Transfers the card to a certain player if possible

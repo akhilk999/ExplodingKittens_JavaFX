@@ -1,6 +1,7 @@
 package com.example.newexplodingkittens.model.cards;
 
 import com.example.newexplodingkittens.interfaces.Card;
+import com.example.newexplodingkittens.model.Deck;
 
 import javax.swing.*;
 
@@ -11,8 +12,8 @@ public class ShuffleCard implements Card {
      * from the user's hand
      */
     @Override
-    public void play() {
-
+    public void play(Deck deck) {
+        deck.shuffle();
     }
 
     /**

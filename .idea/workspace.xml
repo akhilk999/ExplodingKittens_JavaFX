@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92b11e6f-7af9-4f3a-91f6-2e9c63019650" name="Changes" comment="need to figure how tf controllers work">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/controller/GameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/testing/PlayerTester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/testing/ShuffleCardTester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/GameApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/GameApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/controller/ApplicationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/newexplodingkittens/exploding_kittens.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/newexplodingkittens/exploding_kittens.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/interfaces/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/interfaces/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/AttackCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/AttackCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/DefuseCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/DefuseCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/ExplodingKittenCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/ExplodingKittenCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/NopeCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/NopeCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/SeeTheFuture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/SeeTheFuture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/ShuffleCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/ShuffleCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/SkipCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/SkipCard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,12 +42,12 @@
     &quot;assignee&quot;: &quot;akhilk999&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/akhilk999/ExplodingKittens_JavaFX.git&quot;,
-    &quot;accountId&quot;: &quot;7fc93938-2f34-44bc-8e8a-fdeeeec13316&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/akhilk999/ExplodingKittens_JavaFX.git",
+    "accountId": "1ef9b778-7942-45dc-89bf-640d20aac274"
   }
-}</component>
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -61,8 +69,11 @@
     "Application.GameApplication.executor": "Run",
     "Application.GameView.executor": "Run",
     "Application.HelloApplication.executor": "Run",
+    "Application.PlayerTester.executor": "Run",
+    "Application.ShuffleCardTester.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/akhilk999/IdeaProjects/NewExplodingKittens/src/main/resources/com/example/newexplodingkittens",
     "project.structure.last.edited": "Project",
