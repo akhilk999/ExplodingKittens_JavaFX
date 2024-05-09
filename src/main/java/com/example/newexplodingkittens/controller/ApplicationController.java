@@ -2,14 +2,13 @@ package com.example.newexplodingkittens.controller;
 
 import com.example.newexplodingkittens.model.Deck;
 import com.example.newexplodingkittens.model.Player;
-import com.example.newexplodingkittens.view.PlayerView;
+import com.example.newexplodingkittens.model.cards.DefuseCard;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -50,35 +49,47 @@ public class ApplicationController implements Initializable {
         currentPlayer = turnController.next();
         index = turnController.getIndex();
         tabPane.getSelectionModel().select(tabPane.getTabs().get(index));
+        drawCard.setDisable(false);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         TextInputDialog getNumPlayers = new TextInputDialog("2");
         getNumPlayers.setHeaderText("Enter the number of players: ");
+        getNumPlayers.setContentText("Enter a number from 2-10");
         int numPlayers = Integer.parseInt(getNumPlayers.showAndWait().orElse("-1"));
+        while(numPlayers < 2 || numPlayers > 10){
+            getNumPlayers.setHeaderText("Invalid number - Please enter the number of players: ");
+            numPlayers = Integer.parseInt(getNumPlayers.showAndWait().orElse("-1"));
+        }
         deck = new Deck(numPlayers);
 
         TextInputDialog getPlayers = new TextInputDialog("");
         getPlayers.setHeaderText("Enter the players: ");
         getPlayers.setContentText("Separate by commas");
         String[] players = getPlayers.showAndWait().orElse("").split(",");
+        while(players.length != numPlayers){
+            getPlayers.setHeaderText("Invalid number of players: Please enter the players: ");
+            players = getPlayers.showAndWait().orElse("").split(",");
+        }
         List<Player> playerList = new ArrayList<>();
-        List<PlayerView> playerViewList = new ArrayList<>();
         List<Tab> tabs = tabPane.getTabs();
         for(int lcv = 0; lcv < players.length; lcv++){
-            playerList.add(new Player(players[lcv].trim(), deck));
-            playerViewList.add(new PlayerView(playerList.get(lcv)));
+            Player newPlayer = new Player(players[lcv].trim(),deck);
+            playerList.add(newPlayer);
             if(lcv < 2){
-                tabs.get(lcv).setText(playerList.get(lcv).getName());
-                tabs.get(lcv).setId("#" + playerList.get(lcv).getName());
+                tabs.get(lcv).setText(newPlayer.getName());
+                tabs.get(lcv).setId("#" + newPlayer.getName());
             }
             else{
-                Tab newTab = new Tab(playerList.get(lcv).getName());
-                newTab.setId("#"+ playerList.get(lcv).getName());
+                Tab newTab = new Tab(newPlayer.getName());
+                newTab.setId("#"+ newPlayer.getName());
                 tabs.add(newTab);
             }
-
+            newPlayer.addCardtoHand(new DefuseCard());
+            for(int init = 0; init < 7; init++){
+                newPlayer.addCardtoHand(deck.draw());
+            }
         }
         turnController = new TurnController(playerList);
         currentPlayer = turnController.getCurrentPlayer();

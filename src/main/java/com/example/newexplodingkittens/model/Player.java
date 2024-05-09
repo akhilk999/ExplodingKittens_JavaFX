@@ -79,6 +79,9 @@ public class Player {
         }
         return false;
     }
+    public void addCardtoHand(Card card){
+        hand.add(card);
+    }
 
 
 }
