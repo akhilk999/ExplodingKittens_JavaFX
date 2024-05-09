@@ -3,8 +3,6 @@ package com.example.newexplodingkittens.controller;
 import com.example.newexplodingkittens.model.Deck;
 import com.example.newexplodingkittens.model.Player;
 import com.example.newexplodingkittens.model.cards.DefuseCard;
-import javafx.beans.Observable;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,7 +11,6 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 import java.net.URL;
@@ -22,11 +19,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class ApplicationController implements Initializable {
-    @FXML
-    private Font x3;
-
-    @FXML
-    private Color x4;
 
     @FXML
     public Button drawCard;
@@ -94,14 +86,14 @@ public class ApplicationController implements Initializable {
         List<Player> playerList = new ArrayList<>();
         List<Tab> tabs = tabPane.getTabs();
         tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
-        for(int lcv = 0; lcv < players.length; lcv++){
-            Player newPlayer = new Player(players[lcv].trim(),deck);
+        for (String player : players) {
+            Player newPlayer = new Player(player.trim(), deck);
             playerList.add(newPlayer);
-                Tab newTab = new Tab(newPlayer.getName());
-                newTab.setId("#"+ newPlayer.getName());
-                tabs.add(newTab);
+            Tab newTab = new Tab(newPlayer.getName());
+            newTab.setId("#" + newPlayer.getName());
+            tabs.add(newTab);
             newPlayer.addCardtoHand(new DefuseCard());
-            for(int init = 0; init < 7; init++){
+            for (int init = 0; init < 7; init++) {
                 newPlayer.addCardtoHand(deck.draw());
             }
             VBox verticalContent = new VBox();
@@ -112,7 +104,7 @@ public class ApplicationController implements Initializable {
             newTab.setContent(verticalContent);
             verticalContent.getChildren().add(tabContent);
             List<Node> cardLabels = new ArrayList<>();
-            for(int lcv2 = 0; lcv2 < newPlayer.getHand().size(); lcv2++){
+            for (int lcv2 = 0; lcv2 < newPlayer.getHand().size(); lcv2++) {
                 Button cardButton = new Button(newPlayer.getHand().get(lcv2).toString());
                 cardButton.setFont(new Font(cardButton.getFont().getName(), 15));
                 cardLabels.add(cardButton);
@@ -123,9 +115,9 @@ public class ApplicationController implements Initializable {
         deck.addKittens(numPlayers);
         deck.shuffle();
 
-        currentPlayerLabel.setText(currentPlayer.getName());
         turnController = new TurnController(playerList);
         currentPlayer = turnController.getCurrentPlayer();
+        currentPlayerLabel.setText("Current Player: " + currentPlayer.getName());
         index = turnController.getIndex();
         endTurn.setDisable(true);
         drawCard.setDisable(false);
@@ -145,8 +137,8 @@ public class ApplicationController implements Initializable {
         VBox vertical = (VBox) tabPane.getTabs().get(index).getContent();
         HBox horizontal = (HBox) vertical.getChildren().get(0);
         List<Node> buttonList = horizontal.getChildren();
-        for(int lcv = 0; lcv < buttonList.size(); lcv++){
-            Button button = (Button) buttonList.get(lcv);
+        for (Node node : buttonList) {
+            Button button = (Button) node;
             button.setDisable(bool);
         }
     }
