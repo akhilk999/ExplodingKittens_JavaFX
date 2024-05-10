@@ -21,13 +21,12 @@ public class SeeTheFuture implements Card {
         next.add(deck.getDeck().get(0));
         next.add(deck.getDeck().get(1));
         next.add(deck.getDeck().get(2));
-        Platform.startup(() ->
-        {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("SeeTheFuture");
-            alert.setContentText(next.toString());
-            alert.show();
-        });
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("SeeTheFuture");
+        alert.setContentText(next.toString());
+        alert.show();
+
     }
 
     /**
