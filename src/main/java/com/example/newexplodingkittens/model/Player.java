@@ -60,10 +60,9 @@ public class Player {
         return card;
     }
 
-    public void playCard(int index){
-        (hand.get(index)).play(deck);
-        Card remove = hand.remove(index);
-        deck.setLastPlayed(remove);
+    public void playCard(Card card){
+        hand.remove(card);
+        deck.setLastPlayed(card);
     }
 
     public Deck getDeck(){return deck;}
