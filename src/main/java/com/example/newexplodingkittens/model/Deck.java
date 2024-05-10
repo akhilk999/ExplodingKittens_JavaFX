@@ -57,20 +57,41 @@ public class Deck {
         return deck;
     }
 
+    /** Unused method
+     */
     public List<Card> getLastPlayed() { return lastPlayed; }
 
+    /**
+     * Returns the last played card
+     * @return lastPlayed the last played card
+     */
     public Card getLastPlayedCard(){return lastPlayed.get(0); }
 
+    /**
+     * Sets the last played card
+     * @param card the card to be set as the last played
+     */
     public void setLastPlayed(Card card) { lastPlayed.add(0,card); }
 
+    /**
+     * Shuffles the deck using GameUtils.shuffle()
+     */
     public void shuffle() { deck = GameUtils.shuffle(deck); }
 
+    /**
+     * Adds Kittens to the deck depending on the number of players
+     * @param numPlayers the number of players in the game
+     */
     public void addKittens(int numPlayers){
         for(int lcv = 0; lcv < numPlayers - 1; lcv++){
             deck.add(new ExplodingKittenCard());
         }
     }
 
+    /**
+     * Returns the deck as a string
+     * @return deckString the deck in the form of a string
+     */
     public String toString(){
         String deckString = "";
         for (Card card : deck)
