@@ -33,5 +33,6 @@ public class TurnController {
     public void endGame(){
         isDone = true;
     }
+    public Player getNextPlayer(){return playerList.get((index >= playerList.size() - 1) ? 0 : index+1);}
 
 }

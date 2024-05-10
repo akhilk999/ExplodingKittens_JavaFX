@@ -37,9 +37,9 @@ public class ApplicationController implements Initializable {
     @FXML
     public Label currentPlayerLabel;
 
-    public Deck deck;
-    public TurnController turnController;
-    public Player currentPlayer;
+    public static Deck deck;
+    public static TurnController turnController;
+    public static Player currentPlayer;
     public int index;
     public boolean clickedDrawCard;
     public boolean clickedPlayedCard;
@@ -57,17 +57,20 @@ public class ApplicationController implements Initializable {
     public void endTurnHandler(ActionEvent event){
         endTurn.setDisable(true);
         if(currentPlayer.getNumTurns() > 1)
-            currentPlayer.addTurns(-1);
+            currentPlayer.setTurns(currentPlayer.getNumTurns() - 1);
+
         else{
             currentPlayer = turnController.next();
             index = turnController.getIndex();
             tabPane.getSelectionModel().select(tabPane.getTabs().get(index));
             currentPlayerLabel.setText(currentPlayer.getName());
-            drawCard.setDisable(false);
-            setCardButtonsDisable(false);
+
+
         }
+        drawCard.setDisable(false);
+        setCardButtonsDisable(false);
         if(clickedPlayedCard) {
-            deck.getLastPlayedCard().play(deck);
+
             clickedPlayedCard = false;
         }
     }
@@ -121,6 +124,7 @@ public class ApplicationController implements Initializable {
                     @Override
                     public void handle(ActionEvent event) {
                         if(card.consumesTurn()){
+                            setCardButtonsDisable(true);
                             drawCard.setDisable(true);
                             endTurn.setDisable(false);
                         }
@@ -159,6 +163,7 @@ public class ApplicationController implements Initializable {
                 @Override
                 public void handle(ActionEvent event) {
                     if(card.consumesTurn()){
+                        setCardButtonsDisable(true);
                         drawCard.setDisable(true);
                         endTurn.setDisable(false);
                     }

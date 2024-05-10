@@ -2,9 +2,13 @@ package com.example.newexplodingkittens.model.cards;
 
 import com.example.newexplodingkittens.interfaces.Card;
 import com.example.newexplodingkittens.model.Deck;
-
+import com.example.newexplodingkittens.controller.ApplicationController;
+import com.example.newexplodingkittens.model.Player;
 
 import javax.swing.*;
+
+import static com.example.newexplodingkittens.controller.ApplicationController.currentPlayer;
+import static com.example.newexplodingkittens.controller.ApplicationController.turnController;
 
 public class AttackCard implements Card {
 
@@ -14,6 +18,7 @@ public class AttackCard implements Card {
      */
     @Override
     public void play(Deck deck) {
+        turnController.getNextPlayer().setTurns(2);
 
     }
 

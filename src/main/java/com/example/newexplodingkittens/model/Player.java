@@ -62,11 +62,12 @@ public class Player {
     }
 
     public void playCard(Card card){
-        if (card instanceof DrawFromTheBottom)
+        if(card instanceof DrawFromTheBottom)
             hand.add(deck.getDeck().remove(deck.getDeck().size() - 1));
-        card.play(deck);
         hand.remove(card);
         deck.setLastPlayed(card);
+        card.play(deck);
+
     }
 
     public Deck getDeck(){return deck;}
@@ -91,8 +92,8 @@ public class Player {
     public int getNumTurns(){
         return numTurns;
     }
-    public void addTurns(int extra){
-        numTurns += extra;
+    public void setTurns(int extra){
+        numTurns = extra;
     }
 
 
