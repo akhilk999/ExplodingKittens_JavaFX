@@ -20,8 +20,8 @@ public class DefuseCard implements Card {
     }
 
     /**
-     * Retrieves whether card type is nope-able
-     * @return false b/c it is never nope-able
+     * Retrieves whether card consumes turn when played
+     * @return true b/c it consumes turn
      */
     @Override
     public boolean consumesTurn() {

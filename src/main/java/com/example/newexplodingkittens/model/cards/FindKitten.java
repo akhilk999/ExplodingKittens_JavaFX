@@ -2,12 +2,9 @@ package com.example.newexplodingkittens.model.cards;
 
 import com.example.newexplodingkittens.interfaces.Card;
 import com.example.newexplodingkittens.model.Deck;
-import javafx.application.Platform;
 import javafx.scene.control.Alert;
 
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class FindKitten implements Card {
 

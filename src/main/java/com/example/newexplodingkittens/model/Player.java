@@ -68,6 +68,10 @@ public class Player {
         return card;
     }
 
+    /**
+     * Plays a card from the player's hand
+     * @param card the card to play from the player's hand
+     */
     public void playCard(Card card){
         if(card instanceof DrawFromTheBottom)
             hand.add(deck.getDeck().remove(deck.getDeck().size() - 1));
@@ -81,6 +85,10 @@ public class Player {
         hand.remove(card);
     }
 
+    /**
+     * Returns the deck
+     * @return deck the game deck
+     */
     public Deck getDeck(){return deck;}
 
     /**
@@ -96,13 +104,27 @@ public class Player {
         }
         return false;
     }
+
+    /**
+     * Adds a specific card to the Player's hand
+     * @param card the type of card to add to the hand
+     */
     public void addCardtoHand(Card card){
         hand.add(card);
     }
 
+    /**
+     * Gets the number of turns
+     * @return numTurns the number of turns from the player
+     */
     public int getNumTurns(){
         return numTurns;
     }
+
+    /**
+     * Sets the number of turns
+     * @param extra the number of turns to set
+     */
     public void setTurns(int extra){
         numTurns = extra;
     }

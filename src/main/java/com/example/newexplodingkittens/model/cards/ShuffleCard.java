@@ -17,8 +17,8 @@ public class ShuffleCard implements Card {
     }
 
     /**
-     * Retrieves whether card type is nope-able
-     * @return true b/c it is always nope-able
+     * Retrieves whether card consumes turn when played
+     * @return false b/c it does not consume turn
      */
     @Override
     public boolean consumesTurn() {
