@@ -2,6 +2,7 @@ package com.example.newexplodingkittens.testing;
 
 import com.example.newexplodingkittens.model.Deck;
 import com.example.newexplodingkittens.model.Player;
+import com.example.newexplodingkittens.model.cards.AttackCard;
 
 public class PlayerTester {
     public static void main(String[] args) {
@@ -34,7 +35,7 @@ public class PlayerTester {
 
         System.out.println();
         System.out.println("Testing play()");
-        player2.playCard(0);
+        player2.playCard(new AttackCard());
         System.out.println("Player2's Hand after Player2 plays: " + player2.getHand());
     }
 }
