@@ -6,6 +6,8 @@ import javafx.application.Platform;
 import javafx.scene.control.Alert;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FindKitten implements Card {
 
@@ -15,11 +17,20 @@ public class FindKitten implements Card {
      */
     @Override
     public void play(Deck deck) {
-        int count = (int) deck.getDeck().stream().filter(card -> !(card instanceof ExplodingKittenCard)).count();
+        int count = 0;
+        boolean found = false;
+        System.out.println(deck.toString());
+        while(!found) {
+            if (deck.getDeck().get(count) instanceof ExplodingKittenCard) {
+                found = true;
+            }
+            else
+                count++;
+        }
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("FindKitten");
-        alert.setContentText(count + " Cards until the next Exploding Kitten");
+        alert.setContentText(count + " Cards before the next Exploding Kitten");
         alert.show();
     }
 
