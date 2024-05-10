@@ -2,6 +2,8 @@ package com.example.newexplodingkittens.model.cards;
 
 import com.example.newexplodingkittens.interfaces.Card;
 import com.example.newexplodingkittens.model.Deck;
+import javafx.application.Platform;
+import javafx.scene.control.Alert;
 
 import javax.swing.*;
 
@@ -13,7 +15,14 @@ public class FindKitten implements Card {
      */
     @Override
     public void play(Deck deck) {
-
+        int count = (int) deck.getDeck().stream().filter(card -> !(card instanceof ExplodingKittenCard)).count();
+        Platform.startup(() ->
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("FindKitten");
+            alert.setContentText(count + " Cards until the next Exploding Kitten");
+            alert.show();
+        });
     }
 
     /**
