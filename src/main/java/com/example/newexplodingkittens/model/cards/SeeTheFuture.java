@@ -18,9 +18,13 @@ public class SeeTheFuture implements Card {
     @Override
     public void play(Deck deck) {
         List<Card> next = new ArrayList<>();
-        next.add(deck.getDeck().get(0));
-        next.add(deck.getDeck().get(1));
-        next.add(deck.getDeck().get(2));
+        if (deck.getDeck().size() < 3) {
+            next.addAll(deck.getDeck());
+        } else {
+            for (int i = 0; i < 3; i++) {
+                next.add(deck.getDeck().get(i));
+            }
+        }
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("SeeTheFuture");

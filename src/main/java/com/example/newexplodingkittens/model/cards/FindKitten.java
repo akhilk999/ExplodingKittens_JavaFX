@@ -17,10 +17,10 @@ public class FindKitten implements Card {
     public void play(Deck deck) {
         int count = (int) deck.getDeck().stream().filter(card -> !(card instanceof ExplodingKittenCard)).count();
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("FindKitten");
-            alert.setContentText(count + " Cards until the next Exploding Kitten");
-            alert.show();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("FindKitten");
+        alert.setContentText(count + " Cards until the next Exploding Kitten");
+        alert.show();
     }
 
     /**
