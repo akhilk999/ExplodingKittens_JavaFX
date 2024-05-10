@@ -2,8 +2,12 @@ package com.example.newexplodingkittens.model.cards;
 
 import com.example.newexplodingkittens.interfaces.Card;
 import com.example.newexplodingkittens.model.Deck;
+import javafx.application.Platform;
+import javafx.scene.control.Alert;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SeeTheFuture implements Card {
 
@@ -13,7 +17,17 @@ public class SeeTheFuture implements Card {
      */
     @Override
     public void play(Deck deck) {
-
+        List<Card> next = new ArrayList<>();
+        next.add(deck.getDeck().get(0));
+        next.add(deck.getDeck().get(1));
+        next.add(deck.getDeck().get(2));
+        Platform.startup(() ->
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("SeeTheFuture");
+            alert.setContentText(next.toString());
+            alert.show();
+        });
     }
 
     /**
