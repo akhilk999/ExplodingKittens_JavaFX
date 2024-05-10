@@ -13,7 +13,7 @@ public class DrawFromTheBottom implements Card {
      */
     @Override
     public void play(Deck deck) {
-
+        // implemented in Player
     }
 
     /**
