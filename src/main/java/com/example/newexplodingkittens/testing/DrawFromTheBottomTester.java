@@ -2,9 +2,7 @@ package com.example.newexplodingkittens.testing;
 
 import com.example.newexplodingkittens.model.Deck;
 import com.example.newexplodingkittens.model.Player;
-import com.example.newexplodingkittens.model.cards.AttackCard;
 import com.example.newexplodingkittens.model.cards.DrawFromTheBottom;
-import com.example.newexplodingkittens.model.cards.ShuffleCard;
 
 public class DrawFromTheBottomTester {
     public static void main(String[] args) {
@@ -27,7 +25,7 @@ public class DrawFromTheBottomTester {
         System.out.println("Player1's Hand after Player1 draws: " + player1.getHand().toString());
         System.out.println("Player2's Hand after Player1 draws: " + player2.getHand().toString());
 
-        player1.playCard(new AttackCard());
+        player1.playCard(player1.getHand().get(0));
         System.out.println();
         System.out.println("Player1's Deck after Player1 Draws From The Bottom: " + player1.getDeck().toString());
         System.out.println("Player2's Deck after Player1 Draws From The Bottom: " + player2.getDeck().toString());

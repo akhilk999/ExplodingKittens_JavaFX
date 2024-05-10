@@ -2,6 +2,7 @@ package com.example.newexplodingkittens.model;
 
 import com.example.newexplodingkittens.interfaces.Card;
 import com.example.newexplodingkittens.model.cards.DefuseCard;
+import com.example.newexplodingkittens.model.cards.DrawFromTheBottom;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,6 +62,9 @@ public class Player {
     }
 
     public void playCard(Card card){
+        if (card instanceof DrawFromTheBottom)
+            hand.add(deck.getDeck().remove(deck.getDeck().size() - 1));
+        card.play(deck);
         hand.remove(card);
         deck.setLastPlayed(card);
     }

@@ -26,7 +26,7 @@ public class FindKittenTester {
         System.out.println("Player1's Hand after Player1 draws: " + player1.getHand().toString());
         System.out.println("Player2's Hand after Player1 draws: " + player2.getHand().toString());
 
-        player1.playCard(0);
+        player1.playCard(player1.getHand().get(0));
         System.out.println();
         System.out.println("Player1's Deck after Player1 Finds The Kitten: " + player1.getDeck().toString());
         System.out.println("Player2's Deck after Player1 Finds The Kitten: " + player2.getDeck().toString());
