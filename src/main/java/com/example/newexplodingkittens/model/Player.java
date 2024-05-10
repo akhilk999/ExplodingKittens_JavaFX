@@ -106,6 +106,9 @@ public class Player {
     public void setTurns(int extra){
         numTurns = extra;
     }
+    public boolean isEliminated(){
+        return eliminated;
+    }
 
 
 }

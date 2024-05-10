@@ -1,3 +1,13 @@
+/**
+ * The ApplicationController class manages the objects within the application
+ * and the logic behind the game
+ * @author Akhil Kasamsetty, Anish Alle, Andrew Li
+ * Collaborators: N/A
+ * Teacher Name: Ms. Bailey
+ * Period: 6
+ * Due Date: 5-10-2024
+ */
+
 package com.example.newexplodingkittens.controller;
 
 import com.example.newexplodingkittens.interfaces.Card;
@@ -14,7 +24,6 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -40,28 +49,57 @@ public class ApplicationController implements Initializable {
 
     public static Deck deck;
     public static TurnController turnController;
+    public static List<Player> playerList;
     public static Player currentPlayer;
     public int numPlayers;
     public int index;
     public boolean clickedDrawCard;
     public boolean clickedPlayedCard;
 
+    /**
+     * EventHandler for the Draw Card button
+     * which updates the screen when a new card is drawn
+     * @param event runs this method when the button is clicked
+     */
     @FXML
     public void drawCardHandler(ActionEvent event) {
         Card card = turnController.getCurrentPlayer().draw();
         deck.setLastPlayed(card);
         if(card instanceof ExplodingKittenCard){
             currentPlayer.playKitten((ExplodingKittenCard) card);
-            tabPane.getSelectionModel().select(tabPane.getTabs().get((index >= tabPane.getTabs().size() - 1) ? 0 : index+1));
-            tabPane.getTabs().remove(turnController.getIndex());
-            numPlayers--;
-            currentPlayer = turnController.next();
-            index = turnController.getIndex();
-            currentPlayerLabel.setText(currentPlayer.getName());
-            drawCard.setDisable(false);
-            setCardButtonsDisable(false);
-            if(clickedPlayedCard)
-                clickedPlayedCard = false;
+            if(currentPlayer.isEliminated()){
+                if(numPlayers == 2){
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("YAY");
+                    alert.setContentText(turnController.getNextPlayer().getName() + " wins!");
+                    alert.show();
+                    drawCard.setDisable(true);
+                    endTurn.setDisable(true);
+                    setCardButtonsDisable(true);
+                }
+                else{
+                    try{
+                        tabPane.getSelectionModel().select(tabPane.getTabs().get((index >= tabPane.getTabs().size() - 1) ? 0 : index+1));
+                        playerList.remove(currentPlayer);
+                        tabPane.getTabs().remove(turnController.getIndex());
+                        numPlayers--;
+                        turnController.updatePlayerList(playerList);
+                        index = turnController.setIndex((index == 0) ? turnController.getIndex()-1 : index-1);
+                        currentPlayer = turnController.next();
+                        currentPlayerLabel.setText("Current Player: " + currentPlayer.getName());
+                        drawCard.setDisable(false);
+                        setCardButtonsDisable(false);
+                        if(clickedPlayedCard)
+                            clickedPlayedCard = false;
+                    }
+                    catch (Exception e){}
+                }
+            }
+            else{
+                deck.place(new ExplodingKittenCard());
+                deck.shuffle();
+            }
+
         }
         updateCards();
         drawCard.setDisable(true);
@@ -69,6 +107,11 @@ public class ApplicationController implements Initializable {
         endTurn.setDisable(false);
     }
 
+    /**
+     * EventHandler for the End Turn button
+     * which updates the screen when the turn is ended
+     * @param event runs this method when the button is clicked
+     */
     @FXML
     public void endTurnHandler(ActionEvent event){
         endTurn.setDisable(true);
@@ -79,7 +122,7 @@ public class ApplicationController implements Initializable {
             currentPlayer = turnController.next();
             index = turnController.getIndex();
             tabPane.getSelectionModel().select(tabPane.getTabs().get(index));
-            currentPlayerLabel.setText(currentPlayer.getName());
+            currentPlayerLabel.setText("Current Player: " + currentPlayer.getName());
 
 
         }
@@ -89,6 +132,11 @@ public class ApplicationController implements Initializable {
             clickedPlayedCard = false;
     }
 
+    /**
+     * Initializes the state of the controller
+     * @param url the link to the controller
+     * @param resourceBundle resources for the controller
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         TextInputDialog getNumPlayers = new TextInputDialog("2");
@@ -109,7 +157,7 @@ public class ApplicationController implements Initializable {
             getPlayers.setHeaderText("Invalid number of players: Please enter the players: ");
             players = getPlayers.showAndWait().orElse("").split(",");
         }
-        List<Player> playerList = new ArrayList<>();
+        playerList = new ArrayList<>();
         List<Tab> tabs = tabPane.getTabs();
         tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
         for (String player : players) {
@@ -164,6 +212,10 @@ public class ApplicationController implements Initializable {
         endTurn.setDisable(true);
         drawCard.setDisable(false);
     }
+
+    /**
+     * Updates the display of each user's cards on the appropriate tab
+     */
     public void updateCards(){
         VBox vertical = (VBox) tabPane.getTabs().get(index).getContent();
         HBox horizontal = (HBox) vertical.getChildren().get(0);
@@ -192,6 +244,10 @@ public class ApplicationController implements Initializable {
         labelList.addAll(cardButtons);
     }
 
+    /**
+     * Sets all the card buttons to the state of bool
+     * @param bool true if the card buttons should be disabled, false otherwise
+     */
     public void setCardButtonsDisable(boolean bool){
         VBox vertical = (VBox) tabPane.getTabs().get(index).getContent();
         HBox horizontal = (HBox) vertical.getChildren().get(0);

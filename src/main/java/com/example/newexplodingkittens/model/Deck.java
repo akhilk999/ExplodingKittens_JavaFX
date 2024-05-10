@@ -35,7 +35,6 @@ public class Deck {
 
     /**
      * Adds a certain card in a certain location within the deck
-     * NOTE: needs to be fixed
      * @param card the card to be added
      */
     public void place(Card card){
