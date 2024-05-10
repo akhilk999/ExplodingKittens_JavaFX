@@ -1,9 +1,16 @@
+/**
+ * The ShuffleCard class defines the Shuffle Card
+ * @author Akhil Kasamsetty, Anish Alle, Andrew Li
+ * Collaborators: N/A
+ * Teacher Name: Ms. Bailey
+ * Period: 6
+ * Due Date: 5-10-2024
+ */
+
 package com.example.newexplodingkittens.model.cards;
 
 import com.example.newexplodingkittens.interfaces.Card;
 import com.example.newexplodingkittens.model.Deck;
-
-import javax.swing.*;
 
 public class ShuffleCard implements Card {
 
@@ -23,16 +30,6 @@ public class ShuffleCard implements Card {
     @Override
     public boolean consumesTurn() {
         return false;
-    }
-
-    /**
-     * Retrieves the card's images
-     * @return array of card's images
-     */
-    @Override
-    public ImageIcon[] getImages(){
-
-        return new ImageIcon[0];
     }
 
     /**

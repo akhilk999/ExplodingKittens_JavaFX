@@ -1,9 +1,17 @@
+/**
+ * The ExplodingKittenCard class defines the Exploding Kitten Card
+ * @author Akhil Kasamsetty, Anish Alle, Andrew Li
+ * Collaborators: N/A
+ * Teacher Name: Ms. Bailey
+ * Period: 6
+ * Due Date: 5-10-2024
+ */
+
 package com.example.newexplodingkittens.model.cards;
 
 import com.example.newexplodingkittens.interfaces.Card;
 import com.example.newexplodingkittens.model.Deck;
 
-import javax.swing.*;
 
 public class ExplodingKittenCard implements Card {
 
@@ -26,19 +34,6 @@ public class ExplodingKittenCard implements Card {
         return true;
     }
 
-    /**
-     * Retrieves the card's images
-     * @return array of card's images
-     */
-    @Override
-    public ImageIcon[] getImages(){
-
-        return new ImageIcon[0];
-    }
-
-    public void onDraw() {
-
-    }
     /**
      * Retrieves the name of the card
      * @return  the card's name

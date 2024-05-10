@@ -1,3 +1,12 @@
+/**
+ * The Deck class defines the functionality behind the game's deck
+ * @author Akhil Kasamsetty, Anish Alle, Andrew Li
+ * Collaborators: N/A
+ * Teacher Name: Ms. Bailey
+ * Period: 6
+ * Due Date: 5-10-2024
+ */
+
 package com.example.newexplodingkittens.model;
 
 import com.example.newexplodingkittens.interfaces.Card;
@@ -26,14 +35,6 @@ public class Deck {
     }
 
     /**
-     * Discards a certain card from the deck
-     * @param card the card to be removed
-     */
-    public void discard(Card card){
-        deck.remove(card);
-    }
-
-    /**
      * Adds a certain card in a certain location within the deck
      * @param card the card to be added
      */
@@ -56,16 +57,6 @@ public class Deck {
     public List<Card> getDeck(){
         return deck;
     }
-
-    /** Unused method
-     */
-    public List<Card> getLastPlayed() { return lastPlayed; }
-
-    /**
-     * Returns the last played card
-     * @return lastPlayed the last played card
-     */
-    public Card getLastPlayedCard(){return lastPlayed.get(0); }
 
     /**
      * Sets the last played card

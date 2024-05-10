@@ -1,3 +1,12 @@
+/**
+ * The CardFactory class creates the cards for the deck every game
+ * @author Akhil Kasamsetty, Anish Alle, Andrew Li
+ * Collaborators: N/A
+ * Teacher Name: Ms. Bailey
+ * Period: 6
+ * Due Date: 5-10-2024
+ */
+
 package com.example.newexplodingkittens.util;
 
 import com.example.newexplodingkittens.interfaces.Card;

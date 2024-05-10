@@ -1,13 +1,16 @@
+/**
+ * The AttackCard class defines the Attack Card
+ * @author Akhil Kasamsetty, Anish Alle, Andrew Li
+ * Collaborators: N/A
+ * Teacher Name: Ms. Bailey
+ * Period: 6
+ * Due Date: 5-10-2024
+ */
+
 package com.example.newexplodingkittens.model.cards;
 
 import com.example.newexplodingkittens.interfaces.Card;
 import com.example.newexplodingkittens.model.Deck;
-import com.example.newexplodingkittens.controller.ApplicationController;
-import com.example.newexplodingkittens.model.Player;
-
-import javax.swing.*;
-
-import static com.example.newexplodingkittens.controller.ApplicationController.currentPlayer;
 import static com.example.newexplodingkittens.controller.ApplicationController.turnController;
 
 public class AttackCard implements Card {
@@ -31,15 +34,6 @@ public class AttackCard implements Card {
         return true;
     }
 
-    /**
-     * Retrieves the card's images
-     * @return array of card's images
-     */
-    @Override
-    public ImageIcon[] getImages(){
-
-        return new ImageIcon[0];
-    }
 
     /**
      * Retrieves the name of the card

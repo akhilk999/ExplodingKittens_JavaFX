@@ -1,3 +1,12 @@
+/**
+ * The SeeTheFutureTester class tests the SeeTheFuture class
+ * @author Akhil Kasamsetty, Anish Alle, Andrew Li
+ * Collaborators: N/A
+ * Teacher Name: Ms. Bailey
+ * Period: 6
+ * Due Date: 5-10-2024
+ */
+
 package com.example.newexplodingkittens.testing;
 
 import com.example.newexplodingkittens.model.Deck;

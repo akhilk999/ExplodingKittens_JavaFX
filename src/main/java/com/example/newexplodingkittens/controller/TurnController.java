@@ -18,7 +18,6 @@ public class TurnController {
     List<Player> playerList;
     Player currentPlayer;
     int index;
-    boolean isDone;
 
     /**
      * Creates a TurnController object
@@ -28,7 +27,6 @@ public class TurnController {
         this.playerList = playerList;
         currentPlayer = this.playerList.get(0);
         index = 0;
-        isDone = false;
     }
 
     /**
@@ -67,14 +65,18 @@ public class TurnController {
     public int getIndex(){return index;}
 
     /**
-     * Retrieves
-     * @return
+     * Retrieves the next player in the list of players
+     * @return the next player
      */
-    public boolean getIsDone(){return isDone;}
-    public void endGame(){
-        isDone = true;
+    public Player getNextPlayer(){
+        return playerList.get((index >= playerList.size() - 1) ? 0 : index+1);
     }
-    public Player getNextPlayer(){return playerList.get((index >= playerList.size() - 1) ? 0 : index+1);}
+
+    /**
+     * Sets the index value
+     * @param newIndex the new index value
+     * @return the new index value
+     */
     public int setIndex(int newIndex) {
         index = newIndex;
         return index;

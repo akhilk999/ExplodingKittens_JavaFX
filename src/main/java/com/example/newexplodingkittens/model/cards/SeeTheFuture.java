@@ -1,11 +1,17 @@
+/**
+ * The SeeTheFutureCard class defines the See The Future Card
+ * @author Akhil Kasamsetty, Anish Alle, Andrew Li
+ * Collaborators: N/A
+ * Teacher Name: Ms. Bailey
+ * Period: 6
+ * Due Date: 5-10-2024
+ */
+
 package com.example.newexplodingkittens.model.cards;
 
 import com.example.newexplodingkittens.interfaces.Card;
 import com.example.newexplodingkittens.model.Deck;
-import javafx.application.Platform;
 import javafx.scene.control.Alert;
-
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,16 +46,6 @@ public class SeeTheFuture implements Card {
     @Override
     public boolean consumesTurn() {
         return false;
-    }
-
-    /**
-     * Retrieves the card's images
-     * @return array of card's images
-     */
-    @Override
-    public ImageIcon[] getImages(){
-
-        return new ImageIcon[0];
     }
 
     /**

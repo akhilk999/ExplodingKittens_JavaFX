@@ -1,8 +1,16 @@
+/**
+ * The ShuffleCardTester class tests the ShuffleCard class
+ * @author Akhil Kasamsetty, Anish Alle, Andrew Li
+ * Collaborators: N/A
+ * Teacher Name: Ms. Bailey
+ * Period: 6
+ * Due Date: 5-10-2024
+ */
+
 package com.example.newexplodingkittens.testing;
 
 import com.example.newexplodingkittens.model.Deck;
 import com.example.newexplodingkittens.model.Player;
-import com.example.newexplodingkittens.model.cards.DefuseCard;
 import com.example.newexplodingkittens.model.cards.ShuffleCard;
 import com.example.newexplodingkittens.model.cards.SkipCard;
 

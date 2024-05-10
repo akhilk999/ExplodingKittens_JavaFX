@@ -1,9 +1,16 @@
+/**
+ * The SkipCard class defines the Skip Card
+ * @author Akhil Kasamsetty, Anish Alle, Andrew Li
+ * Collaborators: N/A
+ * Teacher Name: Ms. Bailey
+ * Period: 6
+ * Due Date: 5-10-2024
+ */
+
 package com.example.newexplodingkittens.model.cards;
 
 import com.example.newexplodingkittens.interfaces.Card;
 import com.example.newexplodingkittens.model.Deck;
-
-import javax.swing.*;
 
 public class SkipCard implements Card {
 
@@ -23,16 +30,6 @@ public class SkipCard implements Card {
     @Override
     public boolean consumesTurn() {
         return true;
-    }
-
-    /**
-     * Retrieves the card's images
-     * @return array of card's images
-     */
-    @Override
-    public ImageIcon[] getImages(){
-
-        return new ImageIcon[0];
     }
 
     /**

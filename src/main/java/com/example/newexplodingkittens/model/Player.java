@@ -1,3 +1,12 @@
+/**
+ * The Player class defines functionality for each player in the game
+ * @author Akhil Kasamsetty, Anish Alle, Andrew Li
+ * Collaborators: N/A
+ * Teacher Name: Ms. Bailey
+ * Period: 6
+ * Due Date: 5-10-2024
+ */
+
 package com.example.newexplodingkittens.model;
 
 import com.example.newexplodingkittens.interfaces.Card;
@@ -9,9 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-    private String name;
-    private Deck deck;
-    private List<Card> hand;
+    private final String name;
+    private final Deck deck;
+    private final List<Card> hand;
     private boolean eliminated;
     public int numTurns;
 
@@ -23,10 +32,7 @@ public class Player {
         numTurns = 1;
     }
 
-    /** If an ExplodingKittenCard is drawn, then this function will return
-     *  true if they live, false if they die.
-     *
-     * @return whether they live (true) or die (false)
+    /** Eliminates the player if they do not have a Defuse card
      */
     public void onExplode(){
         boolean found = false;
@@ -93,16 +99,14 @@ public class Player {
 
     /**
      * Transfers the card to a certain player if possible
+     *
      * @param other the player for the card to be transferred to
-     * @param card the card to be transferred
-     * @return true if transferred, false if not
+     * @param card  the card to be transferred
      */
-    public boolean transfer(Player other, Card card){
+    public void transfer(Player other, Card card){
         if(hand.remove(card)){
             other.getHand().add(card);
-            return true;
         }
-        return false;
     }
 
     /**
@@ -128,6 +132,11 @@ public class Player {
     public void setTurns(int extra){
         numTurns = extra;
     }
+
+    /**
+     * Retrieves whether the player has been eliminated or not
+     * @return true if he was eliminated, false otherwise
+     */
     public boolean isEliminated(){
         return eliminated;
     }
