@@ -3,6 +3,7 @@ package com.example.newexplodingkittens.model;
 import com.example.newexplodingkittens.interfaces.Card;
 import com.example.newexplodingkittens.model.cards.DefuseCard;
 import com.example.newexplodingkittens.model.cards.DrawFromTheBottom;
+import com.example.newexplodingkittens.model.cards.ExplodingKittenCard;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,9 +30,15 @@ public class Player {
      */
     public void onExplode(){
         boolean found = false;
-        for (Card card : hand)
-            if (card instanceof DefuseCard)
+        int index = -1;
+        for (int lcv = 0; lcv < hand.size(); lcv++){
+            if (hand.get(lcv) instanceof DefuseCard){
                 found = true;
+                index = lcv;
+            }
+        }
+        if(index != -1)
+            hand.remove(index);
         if (!found)
             eliminated = true;
     }
@@ -67,7 +74,11 @@ public class Player {
         hand.remove(card);
         deck.setLastPlayed(card);
         card.play(deck);
+    }
 
+    public void playKitten(ExplodingKittenCard card){
+        onExplode();
+        hand.remove(card);
     }
 
     public Deck getDeck(){return deck;}

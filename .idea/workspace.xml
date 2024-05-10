@@ -8,9 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/controller/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/controller/ApplicationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/controller/TurnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/controller/TurnController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/AttackCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/AttackCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/ExplodingKittenCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/newexplodingkittens/model/cards/ExplodingKittenCard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

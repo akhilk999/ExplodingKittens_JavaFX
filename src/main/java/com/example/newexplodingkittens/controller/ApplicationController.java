@@ -4,6 +4,7 @@ import com.example.newexplodingkittens.interfaces.Card;
 import com.example.newexplodingkittens.model.Deck;
 import com.example.newexplodingkittens.model.Player;
 import com.example.newexplodingkittens.model.cards.DefuseCard;
+import com.example.newexplodingkittens.model.cards.ExplodingKittenCard;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -40,13 +41,28 @@ public class ApplicationController implements Initializable {
     public static Deck deck;
     public static TurnController turnController;
     public static Player currentPlayer;
+    public int numPlayers;
     public int index;
     public boolean clickedDrawCard;
     public boolean clickedPlayedCard;
 
     @FXML
     public void drawCardHandler(ActionEvent event) {
-        deck.setLastPlayed(turnController.getCurrentPlayer().draw());
+        Card card = turnController.getCurrentPlayer().draw();
+        deck.setLastPlayed(card);
+        if(card instanceof ExplodingKittenCard){
+            currentPlayer.playKitten((ExplodingKittenCard) card);
+            tabPane.getSelectionModel().select(tabPane.getTabs().get((index >= tabPane.getTabs().size() - 1) ? 0 : index+1));
+            tabPane.getTabs().remove(turnController.getIndex());
+            numPlayers--;
+            currentPlayer = turnController.next();
+            index = turnController.getIndex();
+            currentPlayerLabel.setText(currentPlayer.getName());
+            drawCard.setDisable(false);
+            setCardButtonsDisable(false);
+            if(clickedPlayedCard)
+                clickedPlayedCard = false;
+        }
         updateCards();
         drawCard.setDisable(true);
         setCardButtonsDisable(true);
@@ -69,10 +85,8 @@ public class ApplicationController implements Initializable {
         }
         drawCard.setDisable(false);
         setCardButtonsDisable(false);
-        if(clickedPlayedCard) {
-
+        if(clickedPlayedCard)
             clickedPlayedCard = false;
-        }
     }
 
     @Override
@@ -80,7 +94,7 @@ public class ApplicationController implements Initializable {
         TextInputDialog getNumPlayers = new TextInputDialog("2");
         getNumPlayers.setHeaderText("Enter the number of players: ");
         getNumPlayers.setContentText("Enter a number from 2-10");
-        int numPlayers = Integer.parseInt(getNumPlayers.showAndWait().orElse("-1"));
+        numPlayers = Integer.parseInt(getNumPlayers.showAndWait().orElse("-1"));
         while(numPlayers < 2 || numPlayers > 10){
             getNumPlayers.setHeaderText("Invalid number - Please enter the number of players: ");
             numPlayers = Integer.parseInt(getNumPlayers.showAndWait().orElse("-1"));

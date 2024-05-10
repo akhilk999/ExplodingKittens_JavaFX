@@ -14,7 +14,6 @@ public class ExplodingKittenCard implements Card {
     @Override
     public void play(Deck deck) {
 
-
     }
 
     /**
