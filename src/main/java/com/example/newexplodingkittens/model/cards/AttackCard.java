@@ -22,7 +22,7 @@ public class AttackCard implements Card {
      * @return true b/c it is always nope-able
      */
     @Override
-    public boolean isNopeable() {
+    public boolean consumesTurn() {
         return true;
     }
 

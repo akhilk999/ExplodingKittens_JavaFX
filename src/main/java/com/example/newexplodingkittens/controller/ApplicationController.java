@@ -47,7 +47,7 @@ public class ApplicationController implements Initializable {
     @FXML
     public void drawCardHandler(ActionEvent event) {
         deck.setLastPlayed(turnController.getCurrentPlayer().draw());
-        update();
+        updateCards();
         drawCard.setDisable(true);
         setCardButtonsDisable(true);
         endTurn.setDisable(false);
@@ -65,6 +65,10 @@ public class ApplicationController implements Initializable {
             currentPlayerLabel.setText(currentPlayer.getName());
             drawCard.setDisable(false);
             setCardButtonsDisable(false);
+        }
+        if(clickedPlayedCard) {
+            deck.getLastPlayedCard().play(deck);
+            clickedPlayedCard = false;
         }
     }
 
@@ -116,7 +120,14 @@ public class ApplicationController implements Initializable {
                 cardButton.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
-                        card.play(deck);
+                        if(card.consumesTurn()){
+                            drawCard.setDisable(true);
+                            endTurn.setDisable(false);
+                        }
+                        currentPlayer.playCard(card);
+                        lastCard.setText(card.toString());
+                        clickedPlayedCard = true;
+                        updateCards();
                     }
                 });
             }
@@ -135,18 +146,33 @@ public class ApplicationController implements Initializable {
         endTurn.setDisable(true);
         drawCard.setDisable(false);
     }
-    public void update(){
+    public void updateCards(){
         VBox vertical = (VBox) tabPane.getTabs().get(index).getContent();
         HBox horizontal = (HBox) vertical.getChildren().get(0);
         List<Node> labelList = horizontal.getChildren();
         List<Node> cardButtons = new ArrayList<>();
         for(int lcv2 = 0; lcv2 < currentPlayer.getHand().size(); lcv2++){
-            Button cardButton = new Button(currentPlayer.getHand().get(lcv2).toString());
+            Card card = currentPlayer.getHand().get(lcv2);
+            Button cardButton = new Button(card.toString());
             cardButtons.add(cardButton);
+            cardButton.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    if(card.consumesTurn()){
+                        drawCard.setDisable(true);
+                        endTurn.setDisable(false);
+                    }
+                    currentPlayer.playCard(card);
+                    lastCard.setText(card.toString());
+                    clickedPlayedCard = true;
+                    updateCards();
+                }
+            });
         }
         labelList.clear();
         labelList.addAll(cardButtons);
     }
+
     public void setCardButtonsDisable(boolean bool){
         VBox vertical = (VBox) tabPane.getTabs().get(index).getContent();
         HBox horizontal = (HBox) vertical.getChildren().get(0);

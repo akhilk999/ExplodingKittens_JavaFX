@@ -30,8 +30,8 @@ public class FindKitten implements Card {
      * @return true b/c it is always nope-able
      */
     @Override
-    public boolean isNopeable() {
-        return true;
+    public boolean consumesTurn() {
+        return false;
     }
 
     /**

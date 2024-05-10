@@ -7,6 +7,6 @@ import com.example.newexplodingkittens.model.Deck;
 
 public  interface Card {
     void play(Deck deck);
-    boolean isNopeable();
+    boolean consumesTurn();
     ImageIcon[] getImages() throws IOException;
 }

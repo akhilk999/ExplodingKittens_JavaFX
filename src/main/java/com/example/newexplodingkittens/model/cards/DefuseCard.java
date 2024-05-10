@@ -24,8 +24,8 @@ public class DefuseCard implements Card {
      * @return false b/c it is never nope-able
      */
     @Override
-    public boolean isNopeable() {
-        return false;
+    public boolean consumesTurn() {
+        return true;
     }
 
     /**
